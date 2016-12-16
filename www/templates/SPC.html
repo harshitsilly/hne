@@ -1,0 +1,31 @@
+<div class="modal slide-in-up"  ng-controller="newCtrl">
+   <header class="bar bar-header  bar-dark bar-secondary">
+      <button id="idFormBack" class=" button button-medium button-clear icon ion-android-arrow-back button-primary" ng-click="backToPreviousForm()"></button>
+     
+        <h1 id="idSPC" class=" title">Single point of contact</h1>
+       
+      
+      <button class="button button-clear button-secondary" ng-click="close()">Cancel</button>
+     
+   </header>
+   <ion-content class="has-header" overflow-scroll="true">
+      <form  name="userForm7" ng-hide="SPC" validate ng-submit="edit7()">
+        <div class="" >
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Contact Person</span>
+    <input type="text" ng-model="ContactPerson" placeholder="mention name of the person to whom we can contact in future or the person providing this information">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Contact No.
+</span>
+    <input type="tel" ng-model="ContactNo"  placeholder="">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Email</span>
+    <input type="email" ng-model="ContactEmail" >
+  </label>
+    </div>
+        <button type="submit" class="button button-block buttonsave button-calm icon-left ion-chevron-right " >Save</button>
+        </form>
+   </ion-content>
+</div>

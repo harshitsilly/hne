@@ -1,0 +1,56 @@
+<div class="modal slide-in-right" style="height: 300px;" ng-controller="newPassCtrl">
+   <header class="bar bar-header bar-dark bar-secondary">
+      
+       
+      <h1 class="title hospitalTitle">{{Hospitalname}}</h1>
+      <button class="button button-clear button-primary" ng-click="close()">Cancel</button>
+      
+   </header>
+   <ion-content class="has-header">
+    <blockquote>
+     <h4>Welcome To {{Hospitalname}}. Please click on form to survey or click on media to collect photos, videos and documents.
+             
+     </h4>
+     </blockquote>
+     
+     <div class="card row" style="width: 94%;">
+           
+          <div class="col col-60 list">
+         
+           <button class="button button-clear button-positive" ng-click="openForm()">Form</button>
+        <div class="list">
+              <div class="item paddingzero">
+              <button ng-class="Form.General" class="col-100 button button-clear formButton " ng-click="openForm()">General</button>
+              
+              </div>
+              <div class="item paddingzero">
+               <button ng-class="Form.AmenitiesFacilities" class="col-100 button button-clear formButton " ng-click="FacilityForm()">Facility</button>
+              </div>
+              <div class="item paddingzero">
+                <button ng-class="Form.Labaratory" class="col-100 button button-clear formButton " ng-click="LabaratoryForm()">Labaratory</button>
+              </div>
+              <div class="item paddingzero">
+                 <button ng-class="Form.Price" class="col-100 button button-clear formButton" ng-click="PriceForm()">Price</button>
+              </div>
+               <div class="item paddingzero">
+                  <button ng-class="Form.Insurance" class="col-100 button button-clear formButton" ng-click="InsuranceForm()">Insurance</button>
+               </div>
+               <div class="item paddingzero">
+                 
+                 {{Form.Speciality}}  <button ng-class="Form.Speciality" class="col-100 button button-clear formButton" ng-click="SpecialityForm()">Speciality</button>
+               </div>
+                <div class="item paddingzero">
+                    <button ng-class="Form.Doctors" class="col-100 button button-clear formButton" ng-click="DoctorsForm()">Doctors</button>
+                </div>
+                <div class="item paddingzero">
+                     <button ng-class="Form.SPC" class="col-100 button button-clear formButton" ng-click="SPCForm()">Special Ponit Of Contact</button>
+                </div>
+              </div>
+          </div>
+           <div class="col col-40">
+           <button class="button button-clear button-assertive" ng-click="openMedia()">Media</button>
+           </div>
+     
+      
+   </ion-content>
+</div>

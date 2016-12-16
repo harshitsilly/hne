@@ -1,0 +1,27 @@
+<div class="modal slide-in-up"  ng-controller="newPass1Ctrl">
+   <header class="bar bar-header  bar-assertive bar-secondary">
+      
+      
+      <h1 class="title">Media</h1>
+      
+      <button class="button button-clear button-primary" ng-click="close()">Cancel</button>
+     
+   </header>
+   
+  
+  <ion-tabs class="tabs-striped tabs-top tabs-background-assertive tabs-color-light">
+   <ion-tab icon-on="ion-images" icon-off="ion-images" 
+        ng-click="sidemenu('/media')" >
+      <ion-nav-view name="bucket-list"></ion-nav-view>
+   </ion-tab>
+   <ion-tab   icon-on="ion-document-text"   icon-off="ion-document-text" ng-click="sidemenu('/documents')" >
+      <ion-nav-view name="bucket-completed"></ion-nav-view>
+   </ion-tab>
+</ion-tabs>
+  
+
+
+ 
+     
+     
+    

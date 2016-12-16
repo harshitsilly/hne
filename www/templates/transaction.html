@@ -1,0 +1,42 @@
+<div class="modal slide-in-right" style="height: 300px;" ng-controller="transactionCtrl">
+   <header class="bar bar-header  bar-dark bar-secondary">
+      <button class="button button-clear button-primary" ng-click="close()">Cancel</button>
+
+      <h1 class="title">Welcome To Hospital 1</h1>
+
+      <!--<button class="button button-positive" ng-click="createNew()">Done</button>-->
+   </header>
+   <ion-content  overflow-scroll="true" class="padding has-header">
+
+    <h1>Step Wise Progress</h1>
+    <div class="card">
+     <canvas id="polar-area" class="chart chart-polar-area"
+  chart-data="data" chart-labels="labels">
+</canvas>
+    </div>
+ <h1>Total Progress</h1>
+ <div class="card">
+ <canvas id="polar-area" class="chart chart-pie"
+  chart-data="data1" chart-labels="labels1">
+</canvas>
+ </div>
+ 
+
+      <ion-scroll>
+	  <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="200px"/>
+  </ion-scroll>
+
+   </ion-content>
+   <nav mfb-menu position="br" effect="slidein-spring"
+     active-icon="ion-close" resting-icon="ion-plus-round"
+     toggling-method="click" >
+     <button mfb-button icon="ion-upload" label="Upload"   ng-click="addImage()"></button>
+     <button mfb-button icon="ion-trash-b"  ng-click="" label="Delete"></button>
+    <button mfb-button icon="ion-stats-bars"  ng-click="transaction()" label="Fill Form"></button>
+
+
+<nav>
+
+
+
+</div>

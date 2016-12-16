@@ -1,0 +1,43 @@
+<div class="modal slide-in-up"  ng-controller="newCtrl">
+   <header class="bar bar-header  bar-dark bar-secondary">
+      <button id="idFormBack" class=" button button-medium button-clear icon ion-android-arrow-back button-primary" ng-click="backToPreviousForm()"></button>
+     
+       <h1 id="idFacility" class=" title">Facility</h1>
+       
+      
+      <button class="button button-clear button-secondary" ng-click="close()">Cancel</button>
+     
+   </header>
+   <ion-content class="has-header" overflow-scroll="true">
+	   <form  name="userForm1"  validate ng-submit="edit1()">
+        <div class="" >
+  
+  
+  <label class="checkbox ">
+   <span class="input-label CBSpanDisplay">Amenities & Facilities</span>
+   <div class="">
+      <ion-alpha-scroll ng-model="amenities" key="name">
+     <div class="facilityCBdisplay">
+    <input type="checkbox" ng-model="item.AmenitiesFacilities"/><span class="input-label itemcheckbox facilityLabeldisplay ">{{item.name}}</span>
+     </div>
+      </ion-alpha-scroll>
+    
+   </div>
+  </label>
+  
+ <label class="item item-input item-stacked-label">
+    <span class="input-label">Others</span>
+    <input type="text" ng-model="AmenitiesOthers" placeholder="Should you feel there's a facility missing, please let us know and we'll consider adding it.">
+  </label>
+  
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">NearBy Places</span>
+    <input type="text" ng-model="NearByPlaces" placeholder="mention nearby Airport, Bus-Stand, Railway/Metro-Station, Hotels with approx. distance in Km."/>
+  </label>
+        </div>
+        <button type="submit" class="button button-block buttonsave button-calm icon-left ion-chevron-right ">Save</button>
+        </form>
+        
+      
+   </ion-content>
+</div>

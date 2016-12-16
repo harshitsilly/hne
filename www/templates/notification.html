@@ -1,0 +1,18 @@
+
+<ion-view>
+	<body ng-controller="notificationCtrl">
+ 
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Local Notification Demo</h1>
+      </ion-header-bar>
+      <ion-content>
+      <form name="myForm" ng-submit="onClickUpload()" enctype="multipart/form-data"> 
+    <input onchange="angular.element(this).scope().uploadFile(this.files)" type="file"/>
+      <button type="submit" class="button button-block  button-calm icon-left ion-chevron-right " >Upload</button>
+</form>
+<button ng-click="popup()">click</button>
+      </ion-content>
+    </ion-pane>
+  </body>
+</ion-view>

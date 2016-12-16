@@ -1,0 +1,344 @@
+<div class="modal slide-in-up"  ng-controller="newCtrl">
+   <header class="bar bar-header  bar-dark bar-secondary">
+      <button id="idFormBack" class=" hiddenVisiblity button button-medium button-clear icon ion-android-arrow-back button-primary" ng-click="backToPreviousForm()"></button>
+      <h1 id="idGeneral" class="title">General</h1>
+       <h1 id="idFacility" class="hiddenVisiblity title">Facility</h1>
+        <h1 id="idLaboratory" class="hiddenVisiblity title">Laboratory & Equipments</h1>
+        <h1 id="idPrice" class="hiddenVisiblity title">Price & Packages</h1>
+        <h1 id="idInsurance" class="hiddenVisiblity title">Insurance</h1>
+        <h1 id="idSpeciality" class="hiddenVisiblity title">Speciality</h1>
+        <h1 id="idDoctors" class="hiddenVisiblity title">Doctors</h1>
+        <h1 id="idSPC" class="hiddenVisiblity title">Single point of contact</h1>
+       
+      
+      <button class="button button-clear button-secondary" ng-click="close()">Cancel</button>
+     
+   </header>
+   <ion-content class="has-header" overflow-scroll="true">
+     
+   
+     <form  validate name="userForm" ng-hide="General"  ng-submit="edit()">
+        <div class="list" >
+  <blockquote class="zeroPadding"><label class="item item-input item-stacked-label">
+    <span class="input-label">Hospital Name</span>
+    <input type="text" name="name" required ng-model="Hospitalname" >
+      <ng-messages for="userForm.name.$error">
+       
+        <ng-message when="required">Required!</ng-message>
+          
+        </ng-messages>
+  </label>
+  
+  
+  </blockquote>
+  
+  <label class="checkbox ">
+   <span class="input-label CBSpanDisplay">Category Name</span>
+   <div class="">
+     <div class="facilityCBdisplay">
+    <input type="checkbox" ng-model="CategoryGovernment"/><span class="input-label itemcheckbox facilityLabeldisplay">Government</span>
+     </div>
+      <div class="facilityCBdisplay">
+    <input type="checkbox" ng-model="CategoryPrivate"/><span class="input-label itemcheckbox facilityLabeldisplay">Private</span>
+     </div>
+      <div class="facilityCBdisplay">
+    <input type="checkbox" ng-model="CategoryOthers"/><span class="input-label itemcheckbox facilityLabeldisplay">Others</span>
+     </div>
+  
+   </div>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Parent Organization</span>
+    <input type="text" ng-model="ParentOrganization">
+  </label>
+  <blockquote class="zeroPadding">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Address 1</span>
+    <input type="text" required name="name1" ng-model="Address1" >
+     <ng-messages for="userForm.name1.$error">
+       
+        <ng-message when="required">Required!</ng-message>
+          
+        </ng-messages>
+  </label>
+  </blockquote>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Address 2</span>
+    <input type="text"   ng-model="Address2">
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Pin Code</span>
+    <input type="text" name="pin" ng-minlength="6"
+                ng-maxlength="6" ng-model="PinCode" >
+    <ng-messages for="userForm.pin.$error">
+       
+       <ng-message when="minlength">Pincode is short.</ng-message>
+        <ng-message when="maxlength">Pincode is of 6 digits.</ng-message>
+          </ng-messages>
+  </label>
+  <blockquote class="zeroPadding">
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">City</span>
+    <input type="text" required name="name2" ng-model="City" >
+     <ng-messages for="userForm.name2.$error">
+       
+        <ng-message when="required">Required!</ng-message>
+          </ng-messages>
+  </label>
+  </blockquote>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Email</span>
+    <input type="email"   ng-model="Email">
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Website</span>
+    <input type="url"   ng-model="Website">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Emergency Contact No</span>
+    <input type="tel"   ng-model="EmergencyContactNo">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Appointment Contact No.</span>
+    <input type="number"  ng-model="AppointmentContactNo">
+  </label>
+  <blockquote class="zeroPadding">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Reception Contact No.</span>
+    <input type="number" required name="name3"  ng-model="ReceptionContactNo">
+    <ng-messages for="userForm.name3.$error">
+       
+        <ng-message when="required">Required!</ng-message>
+          </ng-messages>
+  </label>
+   
+  </blockquote>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">International Patients Contact No.</span>
+    <input type="number"  ng-model="InternationalPatientsContactNo">
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Ambulance Contact No.</span>
+    <input type="tel"  ng-model="AmbulanceContactNo">
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Helpline No.</span>
+    <input type="tel"  ng-model="HelplineNo">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Fax</span>
+    <input type="number"  ng-model="Fax">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">SMS</span>
+    <input type="text"  ng-model="SMS">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Year Established</span>
+    <input type="date"  ng-model="YearEstablished">
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Area</span>
+    <input type="number" placeholder="in Acres or Sq. feet"  ng-model="Area">
+  </label>
+  <blockquote class="zeroPadding">
+   <label class="checkbox ">
+   <span class="input-label CBSpanDisplay">Type of Facility</span>
+   <div class="">
+     <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay ">Ambulatory Surgery</span>
+     </div>
+     <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Cosmetic Surgery</span>
+     </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">General Hospital</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Home Care</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Imaging / X-Ray</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Laboratory</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Multi Practice Physician Facility</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Speciality Hospital</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Therapists</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Walk-in-Clinic</span>
+      </div>
+    <div class="facilityCBdisplay">
+    <input type="checkbox"/><span class="input-label itemcheckbox facilityLabeldisplay">Others</span>
+      </div>
+   
+   </div>
+  </label>
+  </blockquote>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Others</span>
+    <input type="text" placeholder="Should you feel there's a facility missing, please let us know and we'll consider adding it." ng-model="facilityOthers">
+  </label>
+  <label class="item">
+    <span class="input-label">Facility Description</span>
+    <input type="text" placeholder="" ng-model="FacilityDescription">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Seo Keywords</span>
+    <input type="text" placeholder="" ng-model="SeoKeywords">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Accreditations & Awards</span>
+    <input type="text" placeholder="eg. NABH, NABL, ICHA, JCI, ICMR, ISO-14001:2004/ISO-9001:2008/ISO-27001:2005, etc." ng-model="AccreditationsAwards"/>
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">No. of Beds</span>
+   <select class="itemselect" ng-model="SelectfBeds" >
+         <option value="0" >0-50 Beds</option>
+    <option value="1">51-100 BEDS</option>
+                    <option value="2">101-300 Beds</option>
+                    <option value="3">301-500 Beds</option>
+                    <option value="4">501-750 Beds</option>
+                    <option value="5">751+ Beds</option>
+                   
+</select>
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Total Beds</span>
+    <input type="number"  ng-model="TotalBeds" >
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Physicians</span>
+    <input type="number"   ng-model="Physicians">
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">OPD Timings</span>
+    <input type="time" ng-model="OPDTimings">
+     <input type="time">
+  </label>
+  
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Consultation Charges</span>
+    <input type="number" ng-model="ConsultationCharges">
+  </label>
+ <button type="submit" class="button button-block buttonsave button-calm icon-left ion-chevron-right ">Save</button>
+</div>
+
+ 
+
+
+        <!--<div class="form-group">
+         <label class="item item-input item-select">
+          <input type="number" placeholder="Hospital Name" name = "text" ng-model="data.item1" ng-minlength="16"
+                ng-maxlength="16"
+                required  class="form-control">
+                 
+    
+    
+          
+
+          </label>
+          <ng-messages for="userForm.number.$error">
+        <ng-message when="minlength">Name is short</ng-message>
+        <ng-message when="maxlength"></ng-message>
+        <ng-message when="required">Required!</ng-message>
+          
+        </ng-messages>
+         
+         <div class="form-group">
+           <label class="item item-input item-select">
+           <input type="text" placeholder="Parent Organization"  name = "name" ng-model="data.item2" ng-minlength="5"
+                ng-maxlength="20"
+                required
+                class="form-control">
+               
+         </label>
+         <ng-messages for="userForm.name.$error">
+       
+        <ng-message when="required">Required!</ng-message>
+          
+        </ng-messages>
+         
+
+         
+</div>
+         </div>
+           
+            <div >
+ <div class="form-group">
+  
+      
+       <span class="item item-input item-select">
+      <input type="number" placeholder="Address"  name = "number1" ng-model="data.item4" ng-minlength="3"
+                ng-maxlength="3"
+                required
+                class="form-control">
+                
+      </span>
+      <ng-messages for="userForm.number1.$error">
+        <!--<ng-message when="minlength">CVV is too short.</ng-message>
+        <ng-message when="maxlength">CVV is of 3 digits.</ng-message>
+        <ng-message when="required">Required!</ng-message>
+          
+        </ng-messages>
+      
+      
+
+ </div>
+  <div class="input-label">
+      Date Established
+    </div>
+ <span class="item item-input item-select">
+      <input type="date" placeholder="Expiry" ng-model="data.item3">
+      <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
+    <button class="button button-block button-positive"> {{ currentDate | date:'MMMM/yyyy' }} </button>
+</ionic-datepicker>
+      </span>
+</div>
+         <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      State
+    </div>
+    <select ng-model="data.item20">
+      <option>Karnataka</option>
+      <option >NCR</option>
+      <option>ANDHRA Pradesh</option>
+      <option>Arunachal Pradesh</option>
+      <option>Himanchal Pradesh</option>
+      <option>Utar Pradesh</option>
+      <option>Haryana</option>
+      <option>Rajasthan</option>
+      <option>TamilNadu</option>
+      <option>Kerala</option>
+      <option>Punjab</option>
+       <option>Haryana</option>
+   
+    </select>
+  </label>
+
+</div>-->
+     </form>
+
+        
+        
+     
+       
+        
+       
+        
+      
+        
+        
+         
+      
+   </ion-content>
+</div>

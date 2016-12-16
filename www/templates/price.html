@@ -1,0 +1,45 @@
+<div class="modal slide-in-up"  ng-controller="newCtrl">
+   <header class="bar bar-header  bar-dark bar-secondary">
+      <button id="idFormBack" class="button button-medium button-clear icon ion-android-arrow-back button-primary" ng-click="backToPreviousForm()"></button>
+     
+        <h1 id="idPrice" class="title">Price & Packages</h1>
+      
+      
+      <button class="button button-clear button-secondary" ng-click="close()">Cancel</button>
+     
+   </header>
+   <ion-content class="has-header" overflow-scroll="true">
+       <form  name="userForm3" ng-hide="Price" validate ng-submit="edit3()">
+        <div class="" >
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">OPD Fee *</span>
+    <input type="text" ng-model="OPDFee" placeholder="for multiple entries use comma (,)">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Room Tariff
+</span>
+    <input type="text" ng-model="RoomTariff"  placeholder="mention price of general bed, room (3+), room (twin sharing), private room, suite, etc.">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Other Tariff</span>
+    <input type="text" ng-model="OtherTariff" placeholder="mention price of nursery, ICU, etc.">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Treatment Packages</span>
+    <input type="text" ng-model="TreatmentPackages" placeholder="mention price & packages (eg. health checkup, normal delivery, cesarean delivery, bypass surgery, etc.)">
+  </label>
+<label class="item item-input item-stacked-label">
+    <span class="input-label">Comprehensive Packages</span>
+    <input type="text" ng-model = "ComprehensivePackages" placeholder="mention price & packages (eg. Comprehensive Health Checkup for <30 years, 30-40 years, >40 years, etc.)">
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Other Packages</span>
+    <input type="text" ng-model="OtherPackages" placeholder="">
+  </label>
+      </div>
+        <button type="submit" class="button button-block buttonsave button-calm icon-left ion-chevron-right " ng-click="PriceForm()">Save</button>
+        </form>
+    
+   </ion-content>
+</div>
+   

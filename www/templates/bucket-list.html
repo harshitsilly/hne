@@ -1,0 +1,53 @@
+
+
+      
+  <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Devdactic Image Gallery</h1>
+      </ion-header-bar>
+      <ion-content class="mediaBackground" overflow-scroll="true" >
+  
+    <blockquote class="marginzero">
+      <h4>
+      Images
+      </h4>
+    </blockquote>
+        
+        <a class=" zeroPadding item item-list-detail">
+          <ion-scroll direction="x">
+            <img   ng-repeat=" image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
+          </ion-scroll>
+        </a>
+        
+        
+         <blockquote class="marginzero">
+      <h4>
+      Videos
+      </h4>
+    </blockquote>
+        
+        <a class=" zeroPadding item item-list-detail">
+          <ion-scroll direction="x">
+            
+
+            <a  ng-repeat=" video in allVideo"  ng-click="playVideo($index)" >
+              <video ng-src="{{video.src}}" class="image-list-thumb"/>
+              </a>
+        
+          </ion-scroll>
+        </a>
+    
+       
+		
+	
+      </ion-content>
+       <nav mfb-menu position="br" effect="slidein-spring" 
+     active-icon="ion-close" resting-icon="ion-plus-round"
+     toggling-method="click" >
+   <button mfb-button icon="ion-android-delete" label="Delete"></button>
+   <button mfb-button icon="ion-image"  ng-click="AddImage()" label="Add Image"></button>
+    <button mfb-button icon="ion-ios-videocam"  ng-click="AddVideo()" label="Add Video"></button>
+    
+     
+</nav>
+    </ion-pane>

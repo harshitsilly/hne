@@ -1,0 +1,127 @@
+<ion-view title="HOSPITALNATION">
+  
+  <ion-nav-buttons side="primary">
+        <button  id="idback"  class=" backButton button  button-small  button-clear ion-android-arrow-back"  ng-click="back()" ></button>
+         
+    </ion-nav-buttons>
+     <ion-nav-buttons side="right">
+        
+          <button  id="idsearch" class="buttonsize  button  button-small  button-clear button-calm ion-search"  ng-click="Search()" ></button>
+    
+    <input  class="searchInput" ng-model="search.value">
+      
+      <button  id="idsort" class="buttonsize button  button-large  button-clear button-calm ion-funnel"  ng-click="Sort()" ></button>
+    
+    </ion-nav-buttons>
+    
+    
+    
+    
+  <ion-content overflow-scroll="true" padding="true" class="has-header has-search-bar " ng-controller="overviewCtrl ">
+     
+         <h3>Welcome To Hospital Nation MR</h3>
+        
+       
+    <button class=button button-clear button-royal ng-click="addHospital()">Add Hospital</button>
+    
+       <div class="list">
+
+  <div class="item item-divider inprogressBGColor">
+  
+    In Progress 
+  </div>
+ 
+      <div class="list item customlist" ng-repeat="hospital in hospitalAssign | filter: search.value  | orderBy :  sort"  id="{{hospital.key}}">
+         
+      <div class="row">
+           <img class="col col-30"" src="cover.jpg">
+            <div class="col col-50 hars input"  href="javascript:" ng-click="newTask('{{hospital.key}}')"  >
+                   
+                      <h2>{{hospital.name}}</h2>
+      <p>{{hospital.address}}</p>
+                    </div>
+                 <div class="col col-20 hars input">
+                <span class="  col button icon-right ion-location button-clear button-positive" ng-click="location('{{hospital.key}}','{{hospital.progress}}')"></span>
+          <span class=" col button icon-right   ion-ios-telephone button-clear button-balanced"  ng-click="call()"></span>
+                 </div>
+                     </div>
+                     
+                    
+                      
+                       <progress  max="100" value="{{hospital.progressvalue}}"> </progress> 
+                       
+                         
+ </div>
+  
+    
+  
+ 
+
+
+
+ <div class="item item-divider notstartedBGColor">
+ Not Started
+  </div>
+ 
+      <div class="list item customlist" ng-repeat="hospital in hospitallist | filter: search.value  | orderBy :  sort"  id="{{hospital.key}}"> 
+         
+                         
+                            
+       
+        <div class="row">
+            <img  class="col col-30" src="cover.jpg">
+            <div class="col col-50 hars input"    >
+                   <div class="row namepaddingleft">
+                      <h2 class="col col-30 namepaddingleft">{{hospital.name}}</h2>
+                       <button class=" col col-20 buttonRequest button button-clear button-assertive" ng-click="StartMR('{{hospital.key}}')">Request</button>
+      </div>
+      <p>{{hospital.address}}</p>
+      
+     
+                    </div>
+                 <div class="col col-20 hars input">
+                <span class="  col button icon-right ion-location button-clear button-positive" ng-click="location()"></span>
+          <span class=" col button icon-right   ion-ios-telephone button-clear button-balanced"  ng-click="call()"></span>
+              
+                 </div>
+                     </div>
+                      
+                       
+                       
+                         
+ </div>
+ 
+ <div class="item item-divider completedBGColor">
+ Completed
+  </div>
+ 
+      <div class="list item customlist" ng-repeat="hospital in hospitallist | filter: search.value  | orderBy :  sort"  id="{{hospital.key}}"> 
+         
+                         
+                            
+        
+        <div class="row">
+           <img  class="col col-30" src="cover.jpg">
+            <div class="col col-50 hars input"    >
+                   
+                      <h2>{{hospital.name}}</h2>
+      <p>{{hospital.address}}</p>
+      
+     
+                    </div>
+                 <div class="col col-20 hars input">
+                <span class="  col button icon-right ion-location button-clear button-positive" ng-click="location()"></span>
+          <span class=" col button icon-right   ion-ios-telephone button-clear button-balanced"  ng-click="call()"></span>
+              
+                 </div>
+                     </div>
+                      
+                       
+                       
+                         
+ </div>
+ 
+ 
+      </ion-content>
+  
+</ion-view>

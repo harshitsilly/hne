@@ -1,0 +1,39 @@
+<div class="modal slide-in-up"  ng-controller="newCtrl">
+   <header class="bar bar-header  bar-dark bar-secondary">
+      <button id="idFormBack" class="button button-medium button-clear icon ion-android-arrow-back button-primary" ng-click="backToPreviousForm()"></button>
+       <h1 id="idInsurance" class="title">Insurance</h1>
+       
+       
+      
+      <button class="button button-clear button-secondary" ng-click="close()">Cancel</button>
+     
+   </header>
+   <ion-content class="has-header" overflow-scroll="true">
+      <form  name="userForm4" ng-hide="Insurance" validate ng-submit="edit4()">
+        <div class="list" >
+  
+  
+  <label class="checkbox ">
+   <span class="input-label CBSpanDisplay">Insurance</span>
+   <div class="">
+      <div ng-repeat="insurance in insurances">
+     <div class="facilityCBdisplay">
+    <input type="checkbox" ng-model="insurance.available"/><span class="input-label itemcheckbox facilityLabeldisplay ">{{insurance.name}}</span>
+     </div>
+      </div>
+    
+   </div>
+  </label>
+  
+ <label class="item item-input item-stacked-label">
+    <span class="input-label">Others</span>
+    <input type="text" ng-model="InsuranceOthers" placeholder="Should you feel there's a facility missing, please let us know and we'll consider adding it.">
+  </label>
+  
+  
+        </div>
+        <button type="submit" class="button button-block buttonsave button-calm icon-left ion-chevron-right " >Save</button>
+        </form>
+   </ion-content>
+</div>
+   
