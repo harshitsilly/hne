@@ -19,22 +19,29 @@ angular.module('controllers', [])
   
   $scope.authenticate = function() {
   var ref = new Firebase("https://onecard2.firebaseio.com");
+ 
 ref.authWithOAuthPopup("facebook", function(error, authData) {
   if (error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
       // fall-back to browser redirects, and pick up the session
       // automatically when we come back to the origin page
-      ref.authWithOAuthRedirect("facebook", function(error,authData) {
+       ref.onAuth(function(authData) { 
+    $scope.authData = authData;
+       });
+      ref.authWithOAuthRedirect("facebook", function(error) {
           if(error)
           {
     $rootScope.notify("Authentication Failed!", error);
+    $scope.error = true;
           }
-          else{
-             $rootScope.notify("Welcome " + authData.facebook.displayName + "");
+      });
+      if(!$scope.error)
+      {
+           $rootScope.notify("Welcome " + $scope.authData.facebook.displayName + "");
     
      $window.location.href = ('#/menu/overview'); 
-          }
-       });
+      }
+        
     }
    
   } else {
