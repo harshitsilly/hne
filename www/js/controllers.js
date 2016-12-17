@@ -24,7 +24,7 @@ ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
       // fall-back to browser redirects, and pick up the session
       // automatically when we come back to the origin page
-      ref.authWithOAuthRedirect("google", function(error,authData) {
+      ref.authWithOAuthRedirect("facebook", function(error,authData) {
           if(error)
           {
     $rootScope.notify("Authentication Failed!", error);
