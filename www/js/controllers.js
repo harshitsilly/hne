@@ -27,20 +27,21 @@ ref.authWithOAuthPopup("facebook", function(error, authData) {
       // automatically when we come back to the origin page
        ref.onAuth(function(authData) { 
     $scope.authData = authData;
-       });
+    if($scope.authData !== null)
+    {
+     $rootScope.notify("Welcome " + $scope.authData.facebook.displayName + "");
+    
+     $window.location.href = ('#/menu/overview'); 
+     } });
       ref.authWithOAuthRedirect("facebook", function(error) {
           if(error)
           {
     $rootScope.notify("Authentication Failed!", error);
-    $scope.error = true;
-          }
-      });
-      if(!$scope.error)
-      {
-           $rootScope.notify("Welcome " + $scope.authData.facebook.displayName + "");
-    
-     $window.location.href = ('#/menu/overview'); 
+   
+          
       }
+      });
+    
         
     }
    
